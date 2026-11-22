@@ -243,11 +243,12 @@
     }
 
     .number-val {
-      font-size: clamp(32px, 3.2vw, 44px);
+      font-size: clamp(24px, 2.5vw, 44px);
       font-weight: 300;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
       display: block;
+      white-space: nowrap;
     }
 
     .number-label {
@@ -344,15 +345,10 @@
       font-weight: 400;
       background: var(--white);
       color: var(--black);
-      transition: all 0.2s ease;
+      
     }
 
-    .spec-tag:hover {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .lang-boxes {
+       .lang-boxes {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
@@ -398,10 +394,7 @@
     }
 
     .edu-dash {
-      width: 14px;
-      height: 1px;
-      background: var(--black);
-      flex-shrink: 0;
+     display: none;
     }
 
     /* FRENTES DE ATUAÇÃO */
