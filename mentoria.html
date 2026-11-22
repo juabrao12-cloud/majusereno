@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mentoria Cactus 360º | Maju Sereno</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --black: #000000;
       --matte-black: #141414;
       --graphite: #1C1C1C;
-      --dark-gray: #4B4B4B;
+      --gray-text: #4B4B4B;
       --light-silver: #D4D4D4;
       --border-light: #E2E2E2;
-      --border-dark: #333333;
+      --border-dark: #383838;
       --white: #FFFFFF;
     }
 
@@ -34,54 +34,54 @@
       background-color: var(--white);
       color: var(--black);
       line-height: 1.65;
-      font-weight: 400;
       -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 24px;
     }
 
     /* Header */
     header {
       border-bottom: 1px solid var(--black);
-      background-color: var(--white);
+      background: var(--white);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
-    .nav-inner {
+    .nav-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 80px;
+      height: 76px;
     }
 
     .logo {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 300;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--black);
-      text-decoration: none;
+    }
+
+    .logo strong {
+      font-weight: 600;
     }
 
     .nav-links {
       display: flex;
       gap: 32px;
       align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--black);
-      text-decoration: none;
-      transition: opacity 0.2s;
     }
 
     .nav-links a:hover {
@@ -89,11 +89,8 @@
     }
 
     .btn-outline {
-      display: inline-block;
-      padding: 12px 24px;
       border: 1px solid var(--black);
-      color: var(--black);
-      text-decoration: none;
+      padding: 10px 20px;
       font-size: 0.78rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -101,250 +98,202 @@
     }
 
     .btn-outline:hover {
-      background-color: var(--black);
+      background: var(--black);
       color: var(--white);
     }
 
-    .btn-solid {
-      display: inline-block;
-      padding: 16px 36px;
-      background-color: var(--black);
-      color: var(--white);
-      border: 1px solid var(--black);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: all 0.25s ease;
-      cursor: pointer;
-    }
-
-    .btn-solid:hover {
-      background-color: var(--white);
-      color: var(--black);
-    }
-
-    /* Hero Section - Aligned Left */
+    /* Hero */
     .hero {
       padding: 96px 0 112px;
       border-bottom: 1px solid var(--black);
     }
 
-    .hero-content {
-      max-width: 820px;
-      text-align: left;
-    }
-
-    .hero-cactus-icon {
+    .cactus-icon-top {
       display: block;
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
       margin-bottom: 24px;
-      margin-left: -6px;
     }
 
-    .eyebrow {
-      display: block;
+    .hero-tag {
       font-size: 0.78rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--dark-gray);
-      margin-bottom: 24px;
+      color: var(--gray-text);
+      margin-bottom: 20px;
       font-weight: 500;
     }
 
-    h1 {
+    .hero h1 {
       font-size: clamp(2.2rem, 4.5vw, 3.6rem);
       font-weight: 300;
       line-height: 1.18;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
+      max-width: 860px;
       margin-bottom: 28px;
     }
 
-    .hero-lead {
-      font-size: 1.1rem;
-      color: var(--dark-gray);
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--gray-text);
       max-width: 680px;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
       font-weight: 400;
     }
 
-    .hero-actions {
+    .cta-group {
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 16px;
       align-items: center;
-      margin-bottom: 64px;
+      margin-bottom: 56px;
+    }
+
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+      padding: 18px 34px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--black);
+      padding: 18px 28px;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background: var(--matte-black);
+      color: var(--white);
     }
 
     .hero-specs {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       border-top: 1px solid var(--black);
-      padding-top: 28px;
-      gap: 24px;
+      border-left: 1px solid var(--black);
     }
 
-    .spec-item span {
-      display: block;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--dark-gray);
-      margin-bottom: 6px;
-    }
-
-    .spec-item strong {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--black);
-    }
-
-    /* Manifesto Strip */
-    .manifesto-strip {
-      background-color: var(--black);
-      color: var(--white);
-      padding: 20px 0;
-      font-size: 0.76rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-align: center;
-      border-bottom: 1px solid var(--border-dark);
-    }
-
-    /* Section Standard Spacing */
-    section {
-      padding: 112px 0;
-    }
-
-    .section-header {
-      max-width: 740px;
-      margin-bottom: 64px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-      font-weight: 300;
-      line-height: 1.25;
-      margin-bottom: 20px;
-      letter-spacing: -0.01em;
-    }
-
-    .section-header p {
-      font-size: 1.02rem;
-      color: var(--dark-gray);
-    }
-
-    /* Dark Section (Dores) */
-    .dark-section {
-      background-color: var(--matte-black);
-      color: var(--white);
-      border-top: 1px solid var(--black);
+    .spec-item {
+      padding: 24px;
+      border-right: 1px solid var(--black);
       border-bottom: 1px solid var(--black);
     }
 
-    .dark-section .eyebrow {
-      color: var(--light-silver);
+    .spec-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gray-text);
+      margin-bottom: 6px;
     }
 
-    .dark-section .section-header p {
-      color: var(--light-silver);
+    .spec-value {
+      font-size: 1rem;
+      font-weight: 500;
     }
 
-    .symmetrical-grid-2x2 {
+    /* Dark Section - Pain Points */
+    .section-dark {
+      background: var(--matte-black);
+      color: var(--white);
+      padding: 112px 0;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-silver);
+      margin-bottom: 16px;
+    }
+
+    .section-title-light {
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.25;
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .section-subtitle-light {
+      color: var(--light-silver);
+      max-width: 660px;
+      margin-bottom: 56px;
+      font-size: 1rem;
+    }
+
+    .grid-2x2-dark {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       border-top: 1px solid var(--border-dark);
       border-left: 1px solid var(--border-dark);
     }
 
-    .grid-cell {
-      padding: 48px 40px;
+    .card-dark {
+      padding: 40px;
       border-right: 1px solid var(--border-dark);
       border-bottom: 1px solid var(--border-dark);
-      background-color: var(--graphite);
+      background: var(--graphite);
     }
 
-    .cell-num {
-      display: block;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
+    .card-num {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
       color: var(--light-silver);
       margin-bottom: 16px;
+      display: block;
     }
 
-    .grid-cell h3 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin-bottom: 14px;
+    .card-dark h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 12px;
       color: var(--white);
     }
 
-    .grid-cell p {
+    .card-dark p {
       font-size: 0.94rem;
       color: var(--light-silver);
-      line-height: 1.7;
     }
 
-    /* Transformation Table */
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border: 1px solid var(--black);
-    }
-
-    .comp-col {
-      padding: 48px 40px;
-    }
-
-    .comp-col:first-child {
-      border-right: 1px solid var(--black);
-      background-color: #FAFAFA;
-    }
-
-    .comp-col h3 {
-      font-size: 1.15rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 32px;
-      padding-bottom: 16px;
+    /* Section Light - Matriz Cactus */
+    .section-light {
+      padding: 112px 0;
       border-bottom: 1px solid var(--black);
     }
 
-    .comp-list {
-      list-style: none;
+    .section-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.25;
+      max-width: 760px;
+      margin-bottom: 20px;
     }
 
-    .comp-list li {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border-light);
-      font-size: 0.95rem;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
+    .section-subtitle {
+      color: var(--gray-text);
+      max-width: 700px;
+      margin-bottom: 56px;
+      font-size: 1rem;
     }
 
-    .comp-list li:last-child {
-      border-bottom: none;
-    }
-
-    /* Matriz Cactus */
-    .desert-intro {
-      border-left: 2px solid var(--black);
-      padding-left: 28px;
-      margin-bottom: 64px;
-      max-width: 780px;
-    }
-
-    .desert-intro p {
-      font-size: 1.05rem;
-      color: var(--dark-gray);
-      font-style: italic;
-    }
-
-    .pillars-grid {
+    .matriz-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       border-top: 1px solid var(--black);
@@ -352,92 +301,109 @@
     }
 
     .pillar-card {
-      padding: 48px 40px;
+      padding: 44px 40px;
       border-right: 1px solid var(--black);
       border-bottom: 1px solid var(--black);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
-    .pillar-top {
+    .pillar-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .pillar-tag {
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--dark-gray);
+      color: var(--gray-text);
     }
 
     .pillar-card h3 {
-      font-size: 1.3rem;
-      font-weight: 400;
+      font-size: 1.25rem;
+      font-weight: 500;
       margin-bottom: 14px;
     }
 
     .pillar-card p {
       font-size: 0.95rem;
-      color: var(--dark-gray);
-      line-height: 1.7;
+      color: var(--gray-text);
     }
 
-    .compass-bar {
+    .bussola-bar {
       border-left: 1px solid var(--black);
       border-right: 1px solid var(--black);
       border-bottom: 1px solid var(--black);
-      padding: 44px 40px;
-      background-color: #F7F7F7;
+      padding: 40px;
+      background: #FAFAFA;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 32px;
-      box-shadow: 10px 10px 0 var(--black);
+      flex-wrap: wrap;
     }
 
-    .compass-bar h3 {
-      font-size: 1.25rem;
+    .bussola-bar h3 {
+      font-size: 1.2rem;
       font-weight: 500;
       margin-bottom: 8px;
     }
 
-    .compass-bar p {
+    .bussola-bar p {
       font-size: 0.95rem;
-      color: var(--dark-gray);
+      color: var(--gray-text);
       max-width: 760px;
     }
 
-    /* Format Section */
-    .format-grid {
+    /* Transformation */
+    .compare-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--black);
-      border-left: 1px solid var(--black);
+      grid-template-columns: repeat(2, 1fr);
+      border: 1px solid var(--black);
     }
 
-    .format-item {
-      padding: 44px 36px;
+    .compare-col {
+      padding: 44px 40px;
+    }
+
+    .compare-col:first-child {
       border-right: 1px solid var(--black);
-      border-bottom: 1px solid var(--black);
     }
 
-    .format-item strong {
-      display: block;
+    .compare-col.highlight {
+      background: var(--matte-black);
+      color: var(--white);
+    }
+
+    .compare-col h3 {
       font-size: 1.15rem;
       font-weight: 500;
-      margin-bottom: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid currentColor;
     }
 
-    .format-item p {
-      font-size: 0.92rem;
-      color: var(--dark-gray);
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 0.95rem;
     }
 
-    /* Filter Section (Dark) */
+    .compare-list li {
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .compare-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+    }
+
+    /* Audience Filter */
     .filter-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -445,8 +411,8 @@
     }
 
     .filter-col {
-      padding: 48px 40px;
-      background-color: var(--graphite);
+      padding: 44px 40px;
+      background: var(--graphite);
     }
 
     .filter-col:first-child {
@@ -454,30 +420,9 @@
     }
 
     .filter-col h3 {
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-dark);
-      font-weight: 400;
-    }
-
-    .filter-list {
-      list-style: none;
-    }
-
-    .filter-list li {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border-dark);
-      font-size: 0.94rem;
-      color: var(--light-silver);
-      display: flex;
-      gap: 12px;
-    }
-
-    .filter-list li:last-child {
-      border-bottom: none;
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 24px;
     }
 
     /* FAQ */
@@ -487,159 +432,83 @@
 
     .faq-item {
       border-bottom: 1px solid var(--black);
+      padding: 28px 0;
     }
 
     .faq-question {
-      width: 100%;
-      text-align: left;
-      background: none;
-      border: none;
-      padding: 28px 0;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.08rem;
-      font-weight: 400;
-      color: var(--black);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 10px;
     }
 
     .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .faq-answer p {
-      padding-bottom: 28px;
-      font-size: 0.96rem;
-      color: var(--dark-gray);
+      font-size: 0.95rem;
+      color: var(--gray-text);
       max-width: 820px;
     }
 
-    .faq-item.active .faq-answer {
-      max-height: 300px;
+    /* Footer CTA */
+    .footer-cta {
+      padding: 112px 0;
+      text-align: center;
+      background: var(--white);
     }
 
-    .faq-icon {
-      font-size: 1.4rem;
-      font-weight: 300;
-      transition: transform 0.25s ease;
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
-
-    /* Final CTA & Footer */
-    .cta-final {
-      text-align: left;
-      border-top: 1px solid var(--black);
-      background-color: #FAFAFA;
-    }
-
-    .cta-box {
-      max-width: 720px;
-    }
-
-    .cta-cactus-small {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      margin-bottom: 24px;
-      margin-left: -4px;
-      display: block;
-    }
-
-    .cta-final h2 {
+    .footer-cta h2 {
       font-size: clamp(1.9rem, 3.5vw, 2.8rem);
       font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 20px;
+      max-width: 720px;
+      margin: 24px auto 20px;
+      line-height: 1.25;
     }
 
-    .cta-final p {
-      font-size: 1.02rem;
-      color: var(--dark-gray);
-      margin-bottom: 36px;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
+    .footer-cta p {
+      color: var(--gray-text);
+      max-width: 560px;
+      margin: 0 auto 40px;
     }
 
     footer {
       border-top: 1px solid var(--black);
-      padding: 48px 0;
-      background-color: var(--white);
+      padding: 40px 0;
+      font-size: 0.82rem;
+      color: var(--gray-text);
     }
 
-    .footer-inner {
+    .footer-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .social-links {
+      display: flex;
       gap: 24px;
-    }
-
-    .monogram {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--black);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      font-weight: 400;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 28px;
-    }
-
-    .footer-links a {
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--black);
-      text-decoration: none;
-    }
-
-    .copyright {
+      letter-spacing: 0.1em;
       font-size: 0.78rem;
-      color: var(--dark-gray);
+      color: var(--black);
     }
 
-    @media (max-width: 860px) {
-      .nav-links a:not(.btn-outline) {
-        display: none;
-      }
+    @media (max-width: 820px) {
       .hero-specs,
-      .symmetrical-grid-2x2,
-      .comparison-grid,
-      .pillars-grid,
-      .format-grid,
+      .grid-2x2-dark,
+      .matriz-grid,
+      .compare-grid,
       .filter-grid {
         grid-template-columns: 1fr;
       }
-      .comp-col:first-child,
+
+      .compare-col:first-child,
       .filter-col:first-child {
         border-right: none;
-        border-bottom: 1px solid var(--black);
+        border-bottom: 1px solid currentColor;
       }
-      .filter-col:first-child {
-        border-bottom-color: var(--border-dark);
-      }
-      .compass-bar {
-        flex-direction: column;
-        align-items: flex-start;
+
+      .nav-links a:not(.btn-outline) {
+        display: none;
       }
     }
   </style>
@@ -647,364 +516,243 @@
 <body>
 
   <header>
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">Maju Sereno</a>
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">MAJU <strong>SERENO</strong></a>
       <nav class="nav-links">
         <a href="index.html">Sobre Maju</a>
         <a href="#matriz">Matriz Cactus</a>
         <a href="#formato">Formato</a>
         <a href="#faq">FAQ</a>
-        <a href="https://cactuslab.hotmart.host/nova-pagina-86575abc-2963-47ac-a7c8-a76f34a89f70" target="_blank" class="btn-outline">Garantir Vaga</a>
+        <a href="https://msmcactus.hotmart.host/nova-pagina-86575abc-2963-47ac-a7c8-a76f34a89f70" target="_blank" rel="noopener" class="btn-outline">Garantir Vaga</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section: Cacto no canto superior esquerdo em cima do texto, alinhado à esquerda -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <img src="data:image/png;base64,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" alt="Ícone Cacto Mentoria Cactus 360º" class="hero-cactus-icon">
-        <span class="eyebrow">Mentoria Cactus 360º • Por Maju Sereno</span>
-        <h1>Pare de apertar botões no automático. Torne-se a estrategista de mídia que lidera decisões.</h1>
-        <p class="hero-lead">
-          Para analistas, coordenadores e supervisores de mídia paga que cansaram de aceitar "recomendações da plataforma" sem questionar. Desenvolva rigor analítico, visão de negócio e autonomia para defender suas teses — e ser reconhecida pelo seu mérito.
-        </p>
-        <div class="hero-actions">
-          <a href="https://cactuslab.hotmart.host/nova-pagina-86575abc-2963-47ac-a7c8-a76f34a89f70" target="_blank" class="btn-solid">Quero entrar na Mentoria Cactus</a>
-          <a href="https://wa.me/5511989053764?text=Oi%20Maju!%20Vi%20a%20p%C3%A1gina%20da%20Mentoria%20Cactus%20360%C2%BA%20e%20queria%20tirar%20uma%20d%C3%BAvida." target="_blank" class="btn-outline">Tirar dúvida no WhatsApp</a>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <svg class="cactus-icon-top" width="52" height="52" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ícone Cacto">
+          <path d="M53 82H67M53 82V26C53 19.3726 58.3726 14 65 14C71.6274 14 77 19.3726 77 26V42C77 48.6274 71.6274 54 65 54H63M53 60H41C32.7157 60 26 53.2843 26 45V32C26 26.4772 30.4772 22 36 22C41.5228 22 46 26.4772 46 32V46" stroke="#000000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <div class="hero-tag">Mentoria Cactus 360º • Por Maju Sereno</div>
+        <h1>Saia do piloto automático das plataformas e lidere a estratégia de mídia.</h1>
+        <p>Uma mentoria individual e prática para analistas, coordenadores e supervisores de mídia paga que desejam desenvolver visão crítica, defender análises com segurança e conquistar autonomia profissional.</p>
+
+        <div class="cta-group">
+          <a href="https://msmcactus.hotmart.host/nova-pagina-86575abc-2963-47ac-a7c8-a76f34a89f70" target="_blank" rel="noopener" class="btn-primary">Garantir Minha Vaga na Mentoria</a>
+          <a href="https://wa.me/5511989053764?text=Oi%20Maju!%20Tenho%20interesse%20na%20Mentoria%20Cactus%20360%C2%BA%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener" class="btn-secondary">Tirar Dúvidas no WhatsApp</a>
         </div>
+
         <div class="hero-specs">
           <div class="spec-item">
-            <span>Formato</span>
-            <strong>16 encontros individuais de 1h</strong>
+            <div class="spec-label">Formato</div>
+            <div class="spec-value">16 Encontros Individuais (1h cada)</div>
           </div>
           <div class="spec-item">
-            <span>Metodologia</span>
-            <strong>Mão na massa com exercícios práticos</strong>
+            <div class="spec-label">Metodologia</div>
+            <div class="spec-value">Matriz Cactus 360º + Exercícios Práticos</div>
           </div>
           <div class="spec-item">
-            <span>Comunidade & Espaço Seguro</span>
-            <strong>Foco em Mulheres & LGBTQI+</strong>
+            <div class="spec-label">Foco</div>
+            <div class="spec-value">Estratégia, Dados & Liderança</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="manifesto-strip">
-    Contra o piloto automático • Pensamento crítico • Mulheres &amp; LGBTQI+ na liderança
-  </div>
+    <!-- DORES -->
+    <section class="section-dark">
+      <div class="container">
+        <div class="section-eyebrow">O Cenário Real</div>
+        <h2 class="section-title-light">Você já sabe operar campanhas. O que falta é segurança e espaço para comandar a estratégia.</h2>
+        <p class="section-subtitle-light">O mercado de performance exige velocidade, mas raramente ensina a pensar criticamente. Se você sente que bateu em um teto técnico ou de reconhecimento, isso acontece por quatro motivos:</p>
 
-  <!-- Seção 2: Dores (Fundo Preto Fosco + Linhas Simétricas) -->
-  <section class="dark-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">O Elefante na Sala</span>
-        <h2>A gente sabe o que acontece nos bastidores das campanhas.</h2>
-        <p>
-          Você já domina a operação ou lidera times no dia a dia. Mas, na hora de defender um corte de verba ou questionar uma diretriz sem base, parece que existe um teto invisível.
-        </p>
-      </div>
-
-      <div class="symmetrical-grid-2x2">
-        <div class="grid-cell">
-          <span class="cell-num">01 // AUTOMAÇÃO CEGA</span>
-          <h3>O bloqueio do "é recomendação da plataforma"</h3>
-          <p>
-            Você sente que a IA e os algoritmos estão dirigindo o orçamento sozinhos, mas falta segurança técnica para puxar o freio e argumentar contra recomendações que não servem para o negócio.
-          </p>
-        </div>
-        <div class="grid-cell">
-          <span class="cell-num">02 // PROFUNDIDADE ANALÍTICA</span>
-          <h3>Análise de dados presa na superfície</h3>
-          <p>
-            Na pressão por entregas rápidas, você olha CPA e ROAS isolados, mas trava na hora de cruzar dados profundos, ler o funil inteiro e antecipar gargalos antes que a conta quebre.
-          </p>
-        </div>
-        <div class="grid-cell">
-          <span class="cell-num">03 // TEATRO CORPORATIVO</span>
-          <h3>Invisibilidade técnica na mesa de decisão</h3>
-          <p>
-            Você vê pessoas ganhando espaço apenas porque sabem "falar bonito", enquanto o seu trabalho técnico e estratégico nos bastidores fica em segundo plano.
-          </p>
-        </div>
-        <div class="grid-cell">
-          <span class="cell-num">04 // GESTÃO E PERTENCIMENTO</span>
-          <h3>A solidão de liderar e questionar</h3>
-          <p>
-            Seja como analista ou na gestão de equipe, falta um espaço seguro — especialmente para mulheres e pessoas LGBTQI+ — para testar hipóteses, desenvolver pessoas e crescer sem precisar vestir uma armadura o tempo todo.
-          </p>
+        <div class="grid-2x2-dark">
+          <div class="card-dark">
+            <span class="card-num">01 / AUTOMATIZAÇÃO PASSIVA</span>
+            <h3>O bloqueio do "é recomendação da plataforma"</h3>
+            <p>Você percebe que a IA e os algoritmos estão tomando decisões pelo negócio, mas falta embasamento técnico para argumentar contra e propor caminhos próprios.</p>
+          </div>
+          <div class="card-dark">
+            <span class="card-num">02 / LEITURA SUPERFICIAL</span>
+            <h3>Métricas isoladas sem visão de negócio</h3>
+            <p>Na correria das entregas, você olha CPA e ROAS, mas trava na hora de cruzar dados profundos, formular hipóteses e antecipar gargalos de funil.</p>
+          </div>
+          <div class="card-dark">
+            <span class="card-num">03 / INVISIBILIDADE ESTRATÉGICA</span>
+            <h3>Falta de voz na mesa de decisão</h3>
+            <p>Você sustenta a operação nos bastidores, enquanto pessoas com menos rigor técnico avançam porque sabem traduzir números em narrativa executiva.</p>
+          </div>
+          <div class="card-dark">
+            <span class="card-num">04 / AMBIENTE DE CRESCIMENTO</span>
+            <h3>Um espaço seguro para evoluir de verdade</h3>
+            <p>Um acompanhamento sem julgamentos — desenhado especialmente para mulheres e pessoas da comunidade LGBTQI+ que querem trocar em alto nível e liderar.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Seção 3: Transformação -->
-  <section>
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">A Virada de Chave</span>
-        <h2>O que muda quando você assume o controle da mesa</h2>
-        <p>Do executor que apenas reage às métricas ao estrategista que direciona resultados e equipes.</p>
-      </div>
+    <!-- MATRIZ CACTUS -->
+    <section id="matriz" class="section-light">
+      <div class="container">
+        <div class="section-eyebrow" style="color: var(--gray-text);">A Metodologia</div>
+        <h2 class="section-title">Matriz Cactus 360º: estrutura para florescer em qualquer cenário.</h2>
+        <p class="section-subtitle">O mercado de mídia paga é como o deserto: árido de referências profundas, com mudanças bruscas de clima e algoritmos. O cacto não sobrevive por acaso — ele possui estrutura interna para armazenar recursos, adaptar-se e sustentar sua posição.</p>
 
-      <div class="comparison-grid">
-        <div class="comp-col">
-          <h3>No piloto automático (Hoje)</h3>
-          <ul class="comp-list">
-            <li><span>—</span> Aceita configurações padrão por insegurança de errar.</li>
-            <li><span>—</span> Sente frio na barriga antes de apresentar resultados para liderança ou clientes.</li>
-            <li><span>—</span> Fica refém das métricas de vaidade que a plataforma quer mostrar.</li>
-            <li><span>—</span> Na gestão, acaba apagando incêndios operacionais em vez de desenvolver o time.</li>
-          </ul>
-        </div>
-        <div class="comp-col">
-          <h3>Com a Matriz Cactus (Depois)</h3>
-          <ul class="comp-list">
-            <li><span>+</span> Cria, testa e valida hipóteses baseadas no lucro real do negócio.</li>
-            <li><span>+</span> Defende cortes e realocações de budget com dados irrefutáveis.</li>
-            <li><span>+</span> Usa a IA como ferramenta, mantendo o pensamento crítico no comando.</li>
-            <li><span>+</span> Eleva sua liderança, gerindo pessoas e potenciais com clareza e método.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção 4: Metodologia Matriz Cactus -->
-  <section id="matriz" style="border-top: 1px solid var(--black);">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">A Metodologia</span>
-        <h2>Matriz Cactus 360º</h2>
-        <p>Quatro pilares e um acelerador transversal para tirar você da operação passiva e colocar no comando estratégico.</p>
-      </div>
-
-      <div class="desert-intro">
-        <p>
-          "O mercado de mídia paga é como o deserto: mudanças bruscas de clima, algoritmos imprevisíveis e escassez de atenção. O cacto não sobrevive por sorte — ele sobrevive porque tem estrutura interna para armazenar recursos, raiz profunda e proteção para florescer mesmo em solo árido."
-        </p>
-      </div>
-
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <div>
-            <div class="pillar-top">
-              <span class="pillar-tag">Pilar 01 // Ampulheta</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <path d="M5 3h14M5 21h14M7 3v4l5 5 5-5V3M7 21v-4l5-5 5 5v4"/>
-              </svg>
+        <div class="matriz-grid">
+          <div class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">Pilar 01 • Ampulheta</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5"><path d="M6 2h12M6 22h12M8 2v4l4 6-4 6v4M16 2v4l-4 6 4 6v4"/></svg>
             </div>
             <h3>Domínio Técnico Avançado</h3>
-            <p>
-              Evolução contínua sem atalhos. Aprofundamento real em Google Ads, Meta Ads e TikTok, segmentações avançadas, leitura crítica de atribuição e métricas que importam para o caixa.
-            </p>
+            <p>Evolução contínua sem atalhos. Aprofundamento em Meta, Google e TikTok, configurações avançadas, leitura crítica de atribuição e métricas que impactam o caixa real.</p>
           </div>
-        </div>
 
-        <div class="pillar-card">
-          <div>
-            <div class="pillar-top">
-              <span class="pillar-tag">Pilar 02 // Camaleão</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>
-              </svg>
+          <div class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">Pilar 02 • Camaleão</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
             </div>
             <h3>Mentalidade Estratégica e Crítica</h3>
-            <p>
-              Adaptação inteligente ao contexto. Aprenda a ler o momento do negócio, questionar regras engessadas e saber a hora exata de deixar o algoritmo rodar ou assumir o controle manual.
-            </p>
+            <p>Adaptabilidade com critério. Aprenda a ler o contexto do negócio, construir hipóteses sólidas e decidir quando usar a IA a seu favor ou assumir o controle manual.</p>
           </div>
-        </div>
 
-        <div class="pillar-card">
-          <div>
-            <div class="pillar-top">
-              <span class="pillar-tag">Pilar 03 // Sol</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-              </svg>
+          <div class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">Pilar 03 • Sol</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
             </div>
             <h3>Comunicação e Influência</h3>
-            <p>
-              Não basta ter razão; é preciso saber comunicar. Traduza planilhas complexas em narrativas de negócio claras, objetivas e impossíveis de ignorar por diretores, clientes ou equipes.
-            </p>
+            <p>Clareza que gera autoridade. Traduza planilhas complexas em recomendações objetivas e impossíveis de ignorar por clientes, pares e diretores.</p>
           </div>
-        </div>
 
-        <div class="pillar-card">
-          <div>
-            <div class="pillar-top">
-              <span class="pillar-tag">Pilar 04 // Espinho</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-                <path d="M12 3l8 18H4L12 3z"/>
-              </svg>
+          <div class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">Pilar 04 • Espinho</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5"><path d="M12 3l9 18H3L12 3z"/></svg>
             </div>
             <h3>Autonomia e Gestão Profissional</h3>
-            <p>
-              Blindagem e posicionamento. Desenvolva segurança para se impor, negociar seu espaço, gerir pessoas e potenciais com clareza e conduzir sua carreira com protagonismo.
-            </p>
+            <p>Blindagem e posicionamento. Desenvolva segurança para defender suas escolhas, gerir pessoas e potenciais na equipe e conduzir sua carreira com protagonismo.</p>
+          </div>
+        </div>
+
+        <div class="bussola-bar">
+          <div>
+            <div class="pillar-tag" style="margin-bottom: 6px;">Acelerador Transversal • Bússola</div>
+            <h3>Direcionamento Individual e Realinhamento de Rota</h3>
+            <p>Ao longo dos 16 encontros, revisamos seus desafios reais de conta ou gestão de equipe, aplicamos exercícios práticos e calibramos seus próximos passos profissionais.</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="compass-bar">
-        <div>
-          <span class="eyebrow" style="margin-bottom: 8px;">Acelerador Transversal</span>
-          <h3>Bússola — Direcionamento Contínuo</h3>
-          <p>
-            Acompanhamento individual em cada etapa para revisar suas contas reais, realinhar metas, destravar decisões difíceis e acelerar sua evolução durante toda a jornada.
-          </p>
+    <!-- TRANSFORMAÇÃO -->
+    <section id="formato" class="section-light">
+      <div class="container">
+        <div class="section-eyebrow" style="color: var(--gray-text);">A Virada de Chave</div>
+        <h2 class="section-title">Do operacional reativo à liderança estratégica.</h2>
+        <p class="section-subtitle">Veja o que muda na sua rotina ao longo dos 16 encontros individuais da Mentoria Cactus 360º:</p>
+
+        <div class="compare-grid">
+          <div class="compare-col">
+            <h3>Hoje (No Piloto Automático)</h3>
+            <ul class="compare-list">
+              <li>Aceita configurações padrão das plataformas por insegurança.</li>
+              <li>Sente frio na barriga antes de defender números em reuniões.</li>
+              <li>Foca apenas em métricas de superfície dentro do gerenciador.</li>
+              <li>Tem dificuldade em desenvolver autonomia ou liderar o time técnico.</li>
+            </ul>
+          </div>
+          <div class="compare-col highlight">
+            <h3>Depois da Mentoria Cactus 360º</h3>
+            <ul class="compare-list">
+              <li>Formula, testa e valida hipóteses conectadas ao objetivo de negócio.</li>
+              <li>Defende realocações de verba e cortes com dados irrefutáveis.</li>
+              <li>Domina a leitura full funnel e usa a IA com pensamento crítico.</li>
+              <li>Posiciona-se como referência técnica e eleva a gestão da equipe.</li>
+            </ul>
+          </div>
         </div>
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="flex-shrink: 0;">
-          <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </div>
+    </section>
+
+    <!-- FILTRO -->
+    <section class="section-dark">
+      <div class="container">
+        <div class="section-eyebrow">Nota de Corte</div>
+        <h2 class="section-title-light">Sinceridade antes de tudo: para quem é esta mentoria?</h2>
+        <p class="section-subtitle-light">Para garantir profundidade em cada sessão individual, a Mentoria Cactus foi desenhada para um perfil específico de profissional:</p>
+
+        <div class="filter-grid">
+          <div class="filter-col">
+            <h3>É para você se:</h3>
+            <ul class="compare-list" style="color: var(--light-silver);">
+              <li>Você já atua com mídia paga (Analista Júnior, Pleno, Sênior, Coordenador ou Supervisor) e conhece as principais plataformas.</li>
+              <li>Quer se destacar, aprimorar sua visão analítica e melhorar a forma como gestiona pessoas e potenciais.</li>
+              <li>Tem perfil questionador e busca crescimento baseado em mérito e rigor técnico.</li>
+            </ul>
+          </div>
+          <div class="filter-col">
+            <h3>Não é para você se:</h3>
+            <ul class="compare-list" style="color: var(--light-silver);">
+              <li>Você nunca subiu uma campanha e procura um tutorial básico de "onde clicar".</li>
+              <li>Busca fórmulas mágicas ou atalhos sem fundamentação em dados e negócio.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-light">
+      <div class="container">
+        <div class="section-eyebrow" style="color: var(--gray-text);">Dúvidas Frequentes</div>
+        <h2 class="section-title">Perguntas sobre a Mentoria Cactus 360º</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">1. Já atuo como sênior, coordenadora ou supervisora. A mentoria não será básica?</div>
+            <div class="faq-answer">De forma alguma. Não ensinamos operação básica de plataforma. Trabalhamos pensamento crítico avançado, tomada de decisão orientada a negócio, posicionamento executivo e gestão técnica de equipes e potenciais.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">2. Como funcionam os 16 encontros e os exercícios práticos?</div>
+            <div class="faq-answer">São 16 sessões individuais de 1 hora cada, adaptadas ao seu momento atual. Entre os encontros, você realiza exercícios práticos aplicados à sua realidade de mercado para consolidar cada pilar da Matriz Cactus.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">3. Como funciona a inscrição e a garantia?</div>
+            <div class="faq-answer">Ao clicar em "Garantir Minha Vaga", você finaliza sua inscrição em ambiente seguro pela Hotmart (via Pix com desconto ou cartão em até 12x) com garantia incondicional de 7 dias, e em seguida agendamos nosso primeiro encontro.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="footer-cta">
+      <div class="container">
+        <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ícone Cacto">
+          <path d="M53 82H67M53 82V26C53 19.3726 58.3726 14 65 14C71.6274 14 77 19.3726 77 26V42C77 48.6274 71.6274 54 65 54H63M53 60H41C32.7157 60 26 53.2843 26 45V32C26 26.4772 30.4772 22 36 22C41.5228 22 46 26.4772 46 32V46" stroke="#000000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
+        <h2>Pronta para sair do automático e liderar a estratégia?</h2>
+        <p>Garanta sua vaga na Mentoria Cactus 360º e dê o próximo passo na sua carreira com acompanhamento individual.</p>
+        <a href="https://msmcactus.hotmart.host/nova-pagina-86575abc-2963-47ac-a7c8-a76f34a89f70" target="_blank" rel="noopener" class="btn-primary">Garantir Minha Vaga na Mentoria</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Seção 5: Formato -->
-  <section id="formato" style="border-top: 1px solid var(--black);">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Como Funciona na Prática</span>
-        <h2>Estrutura desenhada para aplicação real</h2>
-        <p>Sem aulas gravadas genéricas acumulando poeira. É troca direta, análise de cenário e prática.</p>
-      </div>
-
-      <div class="format-grid">
-        <div class="format-item">
-          <strong>16 Encontros Individuais</strong>
-          <p>Sessões de 1 hora focadas 100% no seu momento profissional, nos seus desafios de campanha e na sua evolução como estrategista ou líder.</p>
-        </div>
-        <div class="format-item">
-          <strong>Exercícios Práticos</strong>
-          <p>Atividades aplicadas entre os encontros para você treinar leitura de dados, construção de hipóteses, planos de mídia e defesa de tese.</p>
-        </div>
-        <div class="format-item">
-          <strong>Laboratório nos Seus Desafios</strong>
-          <p>Trazemos a realidade da sua operação ou da sua equipe para a mesa, desenhando soluções que você consegue aplicar imediatamente.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção 6: Filtro de Entrada (Dark) -->
-  <section class="dark-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Nota de Corte</span>
-        <h2>Sinceridade antes de tudo: essa mentoria é para você?</h2>
-        <p>Para garantir profundidade nas discussões, a Mentoria Cactus exige bagagem prática prévia.</p>
-      </div>
-
-      <div class="filter-grid">
-        <div class="filter-col">
-          <h3>É para você se:</h3>
-          <ul class="filter-list">
-            <li><span>✓</span> Você já atua com mídia paga (Analista, Coordenadora ou Supervisora) e conhece a rotina das plataformas.</li>
-            <li><span>✓</span> Tem perfil questionador e não se contenta com respostas rasas ou automáticas.</li>
-            <li><span>✓</span> Quer aprimorar sua visão analítica, influência e gestão de pessoas e potenciais.</li>
-            <li><span>✓</span> Busca crescimento baseado em mérito, ética e rigor técnico.</li>
-          </ul>
-        </div>
-        <div class="filter-col">
-          <h3>Não é para você se:</h3>
-          <ul class="filter-list">
-            <li><span>✕</span> Você nunca subiu uma campanha e procura um tutorial básico de "onde clicar".</li>
-            <li><span>✕</span> Você busca fórmulas mágicas ou "hacks" passageiros sem embasamento em dados.</li>
-            <li><span>✕</span> Não tem disposição para praticar e questionar o próprio modo de analisar contas.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção 7: FAQ -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Perguntas Frequentes</span>
-        <h2>Dúvidas comuns antes de começar</h2>
-      </div>
-
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Já trabalho com mídia há anos ou já ocupo cargo de coordenação/supervisão. Não vai ser básico?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              De jeito nenhum. Aqui não existe aula de "como criar conta de anúncios". Como os encontros são individuais, ajustamos o nível para o seu momento: seja para aprofundar visão de negócio e defesa de tese, seja para estruturar processos e desenvolver pessoas e potenciais no seu time.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Consigo aplicar o que aprender no meu trabalho atual sem precisar pedir permissão para tudo?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Sim. Usamos o seu cenário atual como base. Você vai aprender a testar hipóteses de forma controlada, ler o funil com profundidade e apresentar recomendações de um jeito que ganha a confiança da liderança e dos clientes.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Como funciona a inscrição e o início dos 16 encontros?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Ao garantir sua vaga pela página oficial da Hotmart, você recebe o acesso e o link para agendarmos nossa primeira sessão de diagnóstico e alinhamento da Bússola, definindo o cronograma dos nossos 16 encontros de 1 hora.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção 8: CTA Final -->
-  <section class="cta-final">
-    <div class="container">
-      <div class="cta-box">
-        <img src="data:image/png;base64,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" alt="Ícone Cacto" class="cta-cactus-small">
-        <span class="eyebrow">Próximo Passo</span>
-        <h2>Pronta para sair do automático e assumir sua posição como estrategista?</h2>
-        <p>
-          Garanta sua vaga na Mentoria Cactus 360º e comece sua jornada de 16 encontros individuais com acompanhamento direto.
-        </p>
-        <div class="cta-buttons">
-          <a href="https://cactuslab.hotmart.host/nova-pagina-86575abc-2963-47ac-a7c8-a76f34a89f70" target="_blank" class="btn-solid">Garantir minha vaga agora</a>
-          <a href="https://wa.me/5511989053764?text=Oi%20Maju!%20Quero%20saber%20mais%20sobre%20a%20Mentoria%20Cactus%20360%C2%BA." target="_blank" class="btn-outline">Falar com a Maju no WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <div class="container footer-inner">
-      <div class="monogram">MS</div>
-      <div class="footer-links">
-        <a href="index.html">Página Inicial</a>
-        <a href="https://www.instagram.com/maju.sereno" target="_blank">Instagram</a>
-        <a href="https://www.linkedin.com/in/amajuabrao/" target="_blank">LinkedIn</a>
+    <div class="container footer-bottom">
+      <div>© 2026 Maju Sereno • Mentoria Cactus 360º. Todos os direitos reservados.</div>
+      <div class="social-links">
+        <a href="index.html">Página Principal</a>
+        <a href="https://www.instagram.com/maju.sereno" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/amajuabrao/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/5511989053764" target="_blank" rel="noopener">WhatsApp</a>
       </div>
-      <div class="copyright">© 2026 Maju Sereno. Todos os direitos reservados.</div>
     </div>
   </footer>
 
-  <script>
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        item.classList.toggle('active');
-      });
-    });
-  </script>
 </body>
 </html>
